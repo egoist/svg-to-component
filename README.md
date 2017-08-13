@@ -67,8 +67,6 @@ Return a string which represents a React component.
 
 Return a string which represents a Vue component.
 
-Component name.
-
 ## Contributing
 
 1. Fork it!
