@@ -26,7 +26,7 @@ function getVueComponent(str, name) {
 }
 
 function getComponentNameFromPath(p) {
-  const name = path.basename(p).replace(/\.[^.]+$/, '')
+  const name = path.basename(p).replace(/\.[\s\S]+$/, '')
   return pascalCase(name)
 }
 
