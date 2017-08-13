@@ -1,6 +1,6 @@
 {
   "name": "svg-to-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert SVG to React/Vue components",
   "repository": {
     "url": "egoist/svg-to-component",
