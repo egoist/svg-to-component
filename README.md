@@ -16,7 +16,7 @@ const Svg2Component = require('svg-to-component')
 
 // Generate React component from SVG string
 new Svg2Component()
-  //...........svg stirng, component name
+  //...........svg string, component name
   .fromString('<svg ...', 'MyIcon')
   .toReactComponent()
   // export default function MyIcon(props) {
