@@ -23,7 +23,7 @@ new Svg2Component()
   //   return <svg ...>
   // }
 
-// You can also directly generate component frm an SVG file
+// You can also directly generate component from an SVG file
 new Svg2Component()
   .fromFileSync('./my-icon.svg', 'optional-component-name')
   .toVueComponent()
