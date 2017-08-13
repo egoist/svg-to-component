@@ -55,6 +55,8 @@ Path to SVG file.
 
 #### name
 
+Component name.
+
 ### svg2component.fromFileSync(filename, [name])
 
 Like `.fromFile` but sync and return `this`
