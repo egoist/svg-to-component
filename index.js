@@ -30,13 +30,19 @@ function getComponentNameFromPath(p) {
   return pascalCase(name)
 }
 
+function isPath(str) {
+  return /^[./]|(^[a-zA-Z]:)/.test(str)
+}
+
 module.exports = class Svg2Component {
   fromString(str, name) {
     if (!name) {
       throw new Error('component name is required')
     }
     this.str = str
-    this.componentName = pascalCase(name)
+    this.componentName = isPath(name)
+      ? getComponentNameFromPath(name)
+      : pascalCase(name)
     return this
   }
 

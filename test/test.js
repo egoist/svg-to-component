@@ -24,3 +24,9 @@ test('from file', async t => {
   await svg2component.fromFile(path.join(__dirname, 'fixtures/foo-bar.svg'))
   t.snapshot(svg2component.toReactComponent(), 'React component')
 })
+
+test('from string with custom filepath as name', t => {
+  const svg2component = new Svg2Component()
+  svg2component.fromString(svg, '/foo/bar.svg')
+  t.snapshot(svg2component.toReactComponent(), 'React component name: Bar')
+})

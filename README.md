@@ -43,7 +43,10 @@ SVG string.
 
 #### name
 
-Component name, either in `kebab-case` or `PascalCase`.
+Could be either of:
+
+- Component name, either in `kebab-case` or `PascalCase`.
+- File path, we extract component name from it.
 
 ### svg2component.fromFile(filename, [name])
 
