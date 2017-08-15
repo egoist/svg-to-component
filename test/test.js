@@ -30,3 +30,15 @@ test('from string with custom filepath as name', t => {
   svg2component.fromString(svg, '/foo/bar.svg')
   t.snapshot(svg2component.toReactComponent(), 'React component name: Bar')
 })
+
+test('toReactComponent: keep jsx', t => {
+  const svg2component = new Svg2Component()
+  svg2component.fromString(svg, 'foo')
+  t.snapshot(svg2component.toReactComponent({ transformJSX: false }), 'keep jsx')
+})
+
+test('toVueComponent: keep jsx', t => {
+  const svg2component = new Svg2Component()
+  svg2component.fromString(svg, 'foo')
+  t.snapshot(svg2component.toVueComponent({ transformJSX: false }), 'keep jsx')
+})

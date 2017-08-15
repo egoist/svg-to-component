@@ -64,13 +64,27 @@ Component name.
 
 Like `.fromFile` but sync and return `this`
 
-### svg2component.toReactComponent()
+### svg2component.toReactComponent([opts])
 
 Return a string which represents a React component.
 
-### svg2component.toVueComponent()
+#### opts
+
+##### transformJSX
+
+Type: `boolean`<br>
+Default: `true`
+
+### svg2component.toVueComponent([opts])
 
 Return a string which represents a Vue component.
+
+#### opts
+
+##### transformJSX
+
+Type: `boolean`<br>
+Default: `true`
 
 ## Contributing
 

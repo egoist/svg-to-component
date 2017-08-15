@@ -20,6 +20,9 @@
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-vue": "^1.0.2",
     "pascal-case": "^2.0.1",
     "pify": "^3.0.0"
   },

@@ -332,6 +332,30 @@ babel-core@^6.17.0, babel-core@^6.24.1:
     slash "^1.0.0"
     source-map "^0.5.0"
 
+babel-core@^6.25.0:
+  version "6.25.0"
+  resolved "http://registry.npm.taobao.org/babel-core/download/babel-core-6.25.0.tgz#7dd42b0463c742e9d5296deb3ec67a9322dad729"
+  dependencies:
+    babel-code-frame "^6.22.0"
+    babel-generator "^6.25.0"
+    babel-helpers "^6.24.1"
+    babel-messages "^6.23.0"
+    babel-register "^6.24.1"
+    babel-runtime "^6.22.0"
+    babel-template "^6.25.0"
+    babel-traverse "^6.25.0"
+    babel-types "^6.25.0"
+    babylon "^6.17.2"
+    convert-source-map "^1.1.0"
+    debug "^2.1.1"
+    json5 "^0.5.0"
+    lodash "^4.2.0"
+    minimatch "^3.0.2"
+    path-is-absolute "^1.0.0"
+    private "^0.1.6"
+    slash "^1.0.0"
+    source-map "^0.5.0"
+
 babel-generator@^6.1.0, babel-generator@^6.25.0:
   version "6.25.0"
   resolved "https://registry.npmjs.org/babel-generator/-/babel-generator-6.25.0.tgz#33a1af70d5f2890aeb465a4a7793c1df6a9ea9fc"
@@ -352,6 +376,14 @@ babel-helper-builder-binary-assignment-operator-visitor@^6.24.1:
     babel-helper-explode-assignable-expression "^6.24.1"
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
+
+babel-helper-builder-react-jsx@^6.24.1:
+  version "6.24.1"
+  resolved "http://registry.npm.taobao.org/babel-helper-builder-react-jsx/download/babel-helper-builder-react-jsx-6.24.1.tgz#0ad7917e33c8d751e646daca4e77cc19377d2cbc"
+  dependencies:
+    babel-runtime "^6.22.0"
+    babel-types "^6.24.1"
+    esutils "^2.0.0"
 
 babel-helper-call-delegate@^6.24.1:
   version "6.24.1"
@@ -412,6 +444,10 @@ babel-helper-remap-async-to-generator@^6.24.1:
     babel-traverse "^6.24.1"
     babel-types "^6.24.1"
 
+babel-helper-vue-jsx-merge-props@^2.0.2:
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/babel-helper-vue-jsx-merge-props/download/babel-helper-vue-jsx-merge-props-2.0.2.tgz#aceb1c373588279e2755ea1cfd35c22394fd33f8"
+
 babel-helpers@^6.24.1:
   version "6.24.1"
   resolved "https://registry.npmjs.org/babel-helpers/-/babel-helpers-6.24.1.tgz#3471de9caec388e5c850e597e58a26ddf37602b2"
@@ -450,6 +486,10 @@ babel-plugin-syntax-async-functions@^6.8.0:
 babel-plugin-syntax-exponentiation-operator@^6.8.0:
   version "6.13.0"
   resolved "https://registry.npmjs.org/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
+
+babel-plugin-syntax-jsx@^6.18.0, babel-plugin-syntax-jsx@^6.8.0:
+  version "6.18.0"
+  resolved "http://registry.npm.taobao.org/babel-plugin-syntax-jsx/download/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
 
 babel-plugin-syntax-trailing-function-commas@^6.20.0:
   version "6.22.0"
@@ -527,12 +567,34 @@ babel-plugin-transform-exponentiation-operator@^6.8.0:
     babel-plugin-syntax-exponentiation-operator "^6.8.0"
     babel-runtime "^6.22.0"
 
+babel-plugin-transform-react-jsx@^6.24.1:
+  version "6.24.1"
+  resolved "http://registry.npm.taobao.org/babel-plugin-transform-react-jsx/download/babel-plugin-transform-react-jsx-6.24.1.tgz#840a028e7df460dfc3a2d29f0c0d91f6376e66a3"
+  dependencies:
+    babel-helper-builder-react-jsx "^6.24.1"
+    babel-plugin-syntax-jsx "^6.8.0"
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-strict-mode@^6.24.1:
   version "6.24.1"
   resolved "https://registry.npmjs.org/babel-plugin-transform-strict-mode/-/babel-plugin-transform-strict-mode-6.24.1.tgz#d5faf7aa578a65bbe591cf5edae04a0c67020758"
   dependencies:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
+
+babel-plugin-transform-vue-jsx@^3.4.3:
+  version "3.5.0"
+  resolved "http://registry.npm.taobao.org/babel-plugin-transform-vue-jsx/download/babel-plugin-transform-vue-jsx-3.5.0.tgz#6b1ad29351ad753919403675f0bf8b2a43e17671"
+  dependencies:
+    esutils "^2.0.2"
+
+babel-preset-vue@^1.0.2:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/babel-preset-vue/download/babel-preset-vue-1.0.2.tgz#c22705154ab17643b4a66b3c0939dd97e126fdac"
+  dependencies:
+    babel-helper-vue-jsx-merge-props "^2.0.2"
+    babel-plugin-syntax-jsx "^6.18.0"
+    babel-plugin-transform-vue-jsx "^3.4.3"
 
 babel-register@^6.24.1:
   version "6.24.1"
@@ -1375,7 +1437,7 @@ estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
 
-esutils@^2.0.2:
+esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 

@@ -19,7 +19,7 @@ function getVueComponent(str, name) {
   return `export default {
   name: '${name}',
   functional: true,
-  render(h, ctx) {
+  render: function (h, ctx) {
     return ${injectProps(str, 'ctx.props')}
   }
 }`
@@ -60,22 +60,49 @@ module.exports = class Svg2Component {
     return this
   }
 
-  toComponent(type) {
+  toComponent(type, { transformJSX = true } = {}) {
+    let res
     switch (type) {
       case 'vue':
-        return getVueComponent(this.str, this.componentName)
+        res = getVueComponent(this.str, this.componentName)
+        break
       case 'react':
-        return getReactComponent(this.str, this.componentName)
+        res = getReactComponent(this.str, this.componentName)
+        break
       default:
         throw new Error('Unknown component type')
     }
+
+    if (!transformJSX) {
+      return res
+    }
+
+    const babel = require('babel-core')
+
+    if (type === 'vue') {
+      return babel.transform(res, {
+        babelrc: false,
+        presets: [require.resolve('babel-preset-vue')]
+      }).code
+    }
+
+    if (type === 'react') {
+      return babel.transform(res, {
+        babelrc: false,
+        plugins: [
+          [require.resolve('babel-plugin-transform-react-jsx'), {
+            useBuiltIns: true
+          }]
+        ]
+      }).code
+    }
   }
 
-  toReactComponent() {
-    return this.toComponent('react')
+  toReactComponent(opts) {
+    return this.toComponent('react', opts)
   }
 
-  toVueComponent() {
-    return this.toComponent('vue')
+  toVueComponent(opts) {
+    return this.toComponent('vue', opts)
   }
 }
