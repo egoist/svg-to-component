@@ -20,7 +20,7 @@ function getVueComponent(str, name) {
   name: '${name}',
   functional: true,
   render: function (h, ctx) {
-    return ${injectProps(str, 'ctx.props')}
+    return ${injectProps(str, 'ctx.data')}
   }
 }`
 }
