@@ -6,7 +6,9 @@ const pify = require('pify')
 const fsp = pify(fs)
 
 function ensureSvgAttrs(str) {
-  return str.replace(/xmlns:xlink=/g, 'xlinkHref=')
+  return str.replace(/([a-z]+):([a-z]+)=/g, (m, p1, p2) => {
+    return `${p1}${p2[0].toUpperCase()}${p2.slice(1)}=`
+  })
 }
 
 function injectProps(str, props) {
