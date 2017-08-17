@@ -6,7 +6,7 @@ const pify = require('pify')
 const fsp = pify(fs)
 
 function ensureSvgAttrs(str) {
-  return str.replace(/xmlns:xlink=/, 'xlinkHref=')
+  return str.replace(/xmlns:xlink=/g, 'xlinkHref=')
 }
 
 function injectProps(str, props) {
