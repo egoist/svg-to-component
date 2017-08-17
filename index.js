@@ -90,9 +90,12 @@ module.exports = class Svg2Component {
       return babel.transform(res, {
         babelrc: false,
         plugins: [
-          [require.resolve('babel-plugin-transform-react-jsx'), {
-            useBuiltIns: true
-          }]
+          [
+            require.resolve('babel-plugin-transform-react-jsx'),
+            {
+              useBuiltIns: true
+            }
+          ]
         ]
       }).code
     }
