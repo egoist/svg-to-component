@@ -5,13 +5,17 @@ const pify = require('pify')
 
 const fsp = pify(fs)
 
+function ensureSvgAttrs(str) {
+  return str.replace(/xmlns:xlink=/, 'xlinkHref=')
+}
+
 function injectProps(str, props) {
   return str.replace(/<svg([^>]+)>/, `<svg$1 {...${props}}>`)
 }
 
 function getReactComponent(str, name) {
   return `export default function ${name}(props) {
-  return ${injectProps(str, 'props')}
+  return ${ensureSvgAttrs(injectProps(str, 'props'))}
 }`
 }
 
@@ -20,7 +24,7 @@ function getVueComponent(str, name) {
   name: '${name}',
   functional: true,
   render: function (h, ctx) {
-    return ${injectProps(str, 'ctx.data')}
+    return ${ensureSvgAttrs(injectProps(str, 'ctx.data'))}
   }
 }`
 }
